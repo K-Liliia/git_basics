@@ -9,12 +9,9 @@ function calculateSumOrConcat(arrayOfValues) {
             sumStrings += arrayOfValues[i];
         }
     }
-    if (sumNumbers != 0) {
-        return sumNumbers;
-    } else {
-        return sumStrings;
-    }
+    return [sumNumbers, sumStrings];
 }
 
 console.log("Sum of numbers is: " + calculateSumOrConcat([4, 5, 6, 8, 22, 33, 44]));
 console.log("Sum of strings is: " + calculateSumOrConcat(["red raspberry", "yellow lemon", "green lime", "purple plum", "black blackberry"]));
+console.log(calculateSumOrConcat([1, 2, 'abc', 6, 'one-two', 7]));

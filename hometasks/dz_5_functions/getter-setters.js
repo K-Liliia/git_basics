@@ -1,60 +1,59 @@
 const company = {
-    name: "Pro Nice",
-    amountOfEmployees: 1000,
-    city: "New York",
-    contactInfo: {
-        email: "pro_nice@pronice.com",
-        phoneNumber: 3456776546,
-        socialMediaAcc: "@pro_niceNY"
+    _company_name: "Pro Nice",
+    _amountOfEmployees: 1000,
+    _city: "New York",
+    _contactInfo: {
+        _email: "pro_nice@pronice.com",
+        _phoneNumber: 3456776546,
+        _socialMediaAcc: "@pro_niceNY"
     },
 
-    getCompanyName() {
-        return this.name;
+    get companyName() {
+        return this._company_name;
     },
-    getAmountOfEmployees() {
-        return this.amountOfEmployees;
+    get amountOfEmployees() {
+        return this._amountOfEmployees;
     },
-    getCity() {
-        return this.city;
+    get city() {
+        return this._city;
     },
 
-    getContactInfo() {
-        return `Email: ${this.contactInfo.email}, Phone: ${this.contactInfo.phoneNumber}, Social Media: ${this.contactInfo.socialMediaAcc}`;
+    get contactInfo() {
+        return `Email: ${this._contactInfo._email}, Phone: ${this._contactInfo._phoneNumber}, Social Media: ${this._contactInfo._socialMediaAcc}`;
     },
-    setCompanyName(name) {
-        return this.name = name;
+    set companyName(name) {
+        this._company_name = name;
     },
-    setAmountOfEmployees(amount) {
-        return this.amountOfEmployees = amount;
+    set amountOfEmployees(amount) {
+        this._amountOfEmployees = amount;
     },
-    setCity(cityName) {
-        return this.city = cityName;
+    set city(cityName) {
+        this._city = cityName;
     },
-    setEmail(email) {
-        return this.contactInfo.email = email;
-    },
-    setContactInfo(email, phoneNumber, socialMediaAcc) {
-        return this.contactInfo.email = email, this.contactInfo.phoneNumber = phoneNumber, this.contactInfo.socialMediaAcc = socialMediaAcc;
+    /**
+     * @param {string} email
+     */
+    set email(email) {
+        this._contactInfo._email = email;
     },
     showAllCompanyInfo() {
-        console.log("Company name:" + this.name);
-        console.log("Amount of employees: " + this.amountOfEmployees);
-        console.log("Company location: " + this.city);
-        console.log("Company email: " + this.contactInfo.email);
-        console.log("Company phone number: " + this.contactInfo.phoneNumber);
-        console.log("Company socialMediaAcc: " + this.contactInfo.socialMediaAcc);
+        console.log("Company name:" + this._company_name);
+        console.log("Amount of employees: " + this._amountOfEmployees);
+        console.log("Company location: " + this._city);
+        console.log("Company email: " + this._contactInfo._email);
+        console.log("Company phone number: " + this._contactInfo._phoneNumber);
+        console.log("Company socialMediaAcc: " + this._contactInfo._socialMediaAcc);
     }
 
 };
 
-console.log("Company name is: " + company.getCompanyName());
-console.log("Amount of employees: " + company.getAmountOfEmployees());
-console.log("Company location: " + company.getCity());
-console.log(company.getContactInfo());
-company.setAmountOfEmployees(900);
-console.log("Amount of employees: " + company.getAmountOfEmployees());
-company.setEmail("pro_nice2025@pronice.com");
-console.log(company.getContactInfo());
+console.log("Company name is: " + company.companyName);
+console.log("Amount of employees: " + company.amountOfEmployees);
+console.log("Company location: " + company.city);
+console.log(company.contactInfo);
+company.amountOfEmployees = 900;
+company.email = "pro_nice@gmail.com";
+console.log("Amount of employees: " + company.amountOfEmployees);
 console.log("------------------------------");
 company.showAllCompanyInfo();
 
