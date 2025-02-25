@@ -37,5 +37,6 @@ async function codeExecution() {
     }
 }
 
-codeExecution();
-
+(async () => {
+    await codeExecution();
+})();
