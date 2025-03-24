@@ -1,0 +1,30 @@
+const numberValue = 1;
+const stringValue = "8";
+const booleanValue = true;
+const nullValue = null;
+let undefinedValue;
+const bigNumberValue = 1234567890123456789045676547654601234567890n;
+const objectValue = { name: "John", phoneNumber: +29674523656 };
+
+const result = !booleanValue;
+
+console.log(numberValue + " > " + stringValue + " ?", numberValue > stringValue);
+console.log(stringValue + " < " + booleanValue + " ?", stringValue < booleanValue);
+console.log(booleanValue + " >= " + nullValue + " ?", booleanValue >= nullValue);
+console.log(nullValue + "<= " + undefinedValue + " ?", nullValue <= undefinedValue);
+console.log(numberValue + " == " + booleanValue + " ?", numberValue == booleanValue);
+console.log(numberValue + " === " + booleanValue + " ?", numberValue === booleanValue);
+console.log(bigNumberValue + " != " + numberValue + " ?", bigNumberValue != numberValue);
+console.log(numberValue + " !== " + booleanValue + " ?", numberValue !== booleanValue);
+console.log(objectValue.phoneNumber + " != " + numberValue + " ?", objectValue.phoneNumber != numberValue);
+console.log("---------------------------------");
+console.log(numberValue + " && " + booleanValue + " ?", numberValue && booleanValue);
+console.log(nullValue + " && " + booleanValue + " ?", nullValue && booleanValue);
+console.log(objectValue.name + " && " + booleanValue + " ?", objectValue.name && booleanValue);
+console.log(nullValue + " || " + booleanValue + " ?", nullValue || booleanValue);
+console.log(nullValue + " || " + undefinedValue + " ?", nullValue || undefinedValue);
+console.log(bigNumberValue + " || " + numberValue + " ?", bigNumberValue || numberValue);
+console.log(booleanValue + " !booleanValue ", result);
+console.log(stringValue + " ?? " + undefinedValue + " ?", stringValue ?? undefinedValue);
+console.log(objectValue.name + " ?? " + numberValue + " ?", objectValue.name ?? numberValue);
+console.log(nullValue + " ?? " + booleanValue + " ?", nullValue ?? booleanValue);
