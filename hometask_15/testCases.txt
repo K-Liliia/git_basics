@@ -1,0 +1,56 @@
+Log in to user account
+
+Note: navigate to https://receive-smss.com/ to get a temporarily confirmation code for phone number +38 063 709 94 18 if needed
+
+1. Navigate to the https://rozetka.com.ua/ua/ .
+2. Click on the Account icon in the top right corner. Xpath: //rz-auth-icon[@class='header-actions__component']/button[@class='header__button']
+3. Check that modal window is opened. CSS: .small .modal-layout
+4. Click on "Login with email" button. Xpath: (//button[@class='button button--medium button--link link-button'])[2]
+5. Check that email field is visible. Css: .auth-form .email__input
+6. Type email "newemailtemp@YOPmail.com" in the email field. Css: .auth-form .email__input
+7. Type password "tgseg2ay" in the password field. Css: #password
+8. Click on the "Submit" button. Css: .auth-form .submit-button
+9. Check that user is logged in. Cabinet element is visible. Css: .header-actions__item--notifications .header__button
+
+
+Check that cart button is empty for a guest user
+
+1. Navigate to the https://rozetka.com.ua/ua/ .
+2. Check that Rozetka logo is present. Css: .header .header__logo img   Xpath: //a[@class='header__logo']//img
+3. Click on the Cart button. Css: .header-actions .header-cart__button
+4. Check that message "Cart is empty" is visible. Xpath: //rz-modal-layout[@class='modal-layout']//h4[text()='Кошик порожній'].
+5. Check that cart has no items. List of items element shouldn't be visible. Css: .modal-layout .cart-list
+
+
+Check that user can search for a product and add it to cart
+
+1. Navigate to the https://rozetka.com.ua/ua/ .
+2. Check that Rozetka logo is present. Css: .header .header__logo img   Xpath: //a[@class='header__logo']//img
+3. Click on the search field. Css: .search-form__input-wrapper .search-form__input
+4. Type a product name in the search field. Fox example "iphone 16"
+5. Click on the "Search" button. Css: .search-form .search-form__submit
+6. Check that PLP page is opened and user see a list of filters which includes product name "iphone 16". Xpath: //li/button[contains(text(), ' iPhone 16 ')]
+7. Check that PLP page is opened and user see a list of products. Css: rz-category-goods .goods-tile
+8. User click on the "Add to cart" button for product #4. Xpath: (//button[contains(@class, 'goods-tile__buy-button')])[4]
+9. Check that icon badge on the basket button is visible. Css: .header-actions__item--cart .badge
+10. Click on the basket button. Css: .header-actions .header-cart__button
+11. Check that product is exist in the basket. Css: .cart-list__item .cart-product
+12. Close cart modal page. Css: .modal-layout .button--icon
+
+
+Check that user can increase amount of products in cart and remove it at all
+1. Navigate to the https://rozetka.com.ua/ua/ .
+2. Check that Rozetka logo is present. Css: .header .header__logo img   Xpath: //a[@class='header__logo']//img
+3. Click on the section household goods. Xpath: //li/a[contains(@href, 'tovary-dlya-doma')]
+4. Click on section Armchairs. Xpath: //li/a[@title="Крісла"]
+5. Add first element to the cart. Xpath: (//button[contains(@class, 'goods-tile__buy-button')])[1]
+6. Check that icon badge on the basket button is visible. Css: .header-actions__item--cart .badge
+7. Click on the basket button. Css: .header-actions .header-cart__button
+8. Check that product is exist in the basket. Css: .cart-list__item .cart-product
+9. Click on increase button sign. Css: cart-counter-increment-button
+10. Check that product amount increased to two items. Css: cart-counter-input
+11. Click on three dots in the top right corner of a product body. Css: #cartProductActions0
+12. Click on "Remove" button. Css: #cartProductActions0 button
+13. Check that message "Cart is empty" is visible. Xpath: //rz-modal-layout[@class='modal-layout']//h4[text()='Кошик порожній'].
+14. Check that cart has no items. List of items element shouldn't be visible. Css: .modal-layout .cart-list
+
